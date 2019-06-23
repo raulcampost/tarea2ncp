@@ -32,10 +32,10 @@ public class Empleado {
 	private String sgenero;
 	
 	@Column(name="estado")
-	private Boolean bestado;
+	private String bestado;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_sucursal")
+	//@ManyToOne(fetch = FetchType.LAZY)
+	@Column(name = "id_sucursalpk")
 	private Integer idsucursal;
 	
 	
@@ -43,7 +43,7 @@ public class Empleado {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Empleado(Integer id,String nombre,Integer edad,String genero,Boolean estado,Integer idsucursal) {
+	public Empleado(Integer id,String nombre,Integer edad,String genero,String estado,Integer idsucursal) {
 		// TODO Auto-generated constructor stub
 		this.idempleado = id;
 		this.snombre = nombre;
@@ -72,7 +72,7 @@ public class Empleado {
 		this.sgenero = sgenero;
 	}
 	
-	public void setBestado(Boolean bestado) {
+	public void setBestado(String bestado) {
 		this.bestado = bestado;
 	}
 	
@@ -98,7 +98,7 @@ public class Empleado {
 		return sgenero;
 	}
 	
-	public Boolean getBestado() {
+	public String getBestado() {
 		return bestado;
 	}
 	

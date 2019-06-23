@@ -35,14 +35,14 @@ public class Sucursal {
 	@Column(name="hsalida")
 	private String ssalida;	
 	
-	@Column(name="nMesas")
+	@Column(name="mesas")
 	private Integer inmesas;	
 	
-	@Column(name="nomGerente")
+	@Column(name="gerente")
 	private String sgerente;	
 	
 	
-	@OneToMany(mappedBy = "sucursal", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "idsucursal", fetch = FetchType.LAZY)
 	private List<Empleado> empleados;
 	
 	

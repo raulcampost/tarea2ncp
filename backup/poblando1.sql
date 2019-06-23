@@ -1,0 +1,1 @@
+delete from sucursal where id_sucursal = 48;

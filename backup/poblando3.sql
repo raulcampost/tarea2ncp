@@ -1,0 +1,1 @@
+INSERT INTO "usuario" (usuario,clave) VALUES ('raul@gmail.com','raul'),('antonio@gmail.com','antonio');

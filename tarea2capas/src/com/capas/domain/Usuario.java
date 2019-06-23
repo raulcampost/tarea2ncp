@@ -2,7 +2,10 @@ package com.capas.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -10,6 +13,8 @@ import javax.persistence.Table;
 public class Usuario {
 
 	@Id
+	@GeneratedValue(generator="usuario_sec", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "usuario_sec", sequenceName = "public.usuario_sec")
 	@Column(name="id_usuario")
 	private Integer idusuario;
 	
@@ -21,6 +26,12 @@ public class Usuario {
 	
 	public Usuario() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public Usuario(String user,String pass) {
+		// TODO Auto-generated constructor stub
+		susuario = user;
+		sclave = pass;
 	}
 	
 	public Usuario(Integer id,String user,String pass) {
