@@ -10,27 +10,31 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(schema="public",name="empleado")
 public class Empleado {
 
 	@Id
-	@GeneratedValue(generator="empleado_sec", strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "empleado_sec", sequenceName = "public.empleado_sec")
+	@GeneratedValue(generator="empleado_id_empleado_seq", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "empleado_id_empleado_seq", sequenceName = "public.empleado_id_empleado_seq")
 	@Column(name="id_empleado")
 	private Integer idempleado;
 	
-	@Column(name="nombre")
-	private String snombre;
+	@NotNull(message = "Este campo es requerido!!!!")
+	@Column(name="empleado")
+	private String sempleado;
 	
+	@NotNull(message = "Este campo es requerido!!!!")
 	@Column(name="edad")
 	private Integer iedad;
 	
-	
+	@NotNull(message = "Este campo es requerido!!!!")
 	@Column(name="genero")
 	private String sgenero;
 	
+	@NotNull(message = "Este campo es requerido!!!!")
 	@Column(name="estado")
 	private String bestado;
 	
@@ -43,15 +47,15 @@ public class Empleado {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Empleado(Integer id,String nombre,Integer edad,String genero,String estado,Integer idsucursal) {
+	public Empleado(String nombre,Integer edad,String genero,String estado,Integer sucursal) {
 		// TODO Auto-generated constructor stub
-		this.idempleado = id;
-		this.snombre = nombre;
+		this.sempleado = nombre;
 		this.iedad = edad;
 		this.sgenero = genero;
 		this.bestado = estado;
-		this.idsucursal = idsucursal;
+		this.idsucursal = sucursal;
 	}
+	
 	
 	
 	
@@ -60,8 +64,8 @@ public class Empleado {
 		this.idempleado = idempleado;
 	}
 	
-	public void setSnombre(String snombre) {
-		this.snombre = snombre;
+	public void setSempleado(String snombre) {
+		this.sempleado = snombre;
 	}
 	
 	public void setIedad(Integer iedad) {
@@ -86,8 +90,8 @@ public class Empleado {
 		return idempleado;
 	}
 	
-	public String getSnombre() {
-		return snombre;
+	public String getSempleado() {
+		return sempleado;
 	}
 	
 	public Integer getIedad() {

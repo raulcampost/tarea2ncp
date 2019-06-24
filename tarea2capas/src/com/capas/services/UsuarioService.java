@@ -12,10 +12,11 @@ import com.capas.dto.FormDTO;
 public interface UsuarioService {
 
 	public List<Empleado> find(Integer user);
+	public Empleado savempleado(Empleado s);
 	public Sucursal findone(Integer user);
 	public void deletempleado(Sucursal id);
 	public Integer deletempleados(Integer id);
 	public List<Sucursal> findsucursal();
-	public List<Sucursal> findsucursalone(Integer id);
-	public List<Sucursal> deletesucursal(Integer id);
+	public Sucursal findsucursalone(Integer id);
+	public Sucursal savesucursal(Sucursal s);
 }

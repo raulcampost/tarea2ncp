@@ -12,6 +12,7 @@ import com.capas.domain.Empleado;
 import com.capas.domain.Sucursal;
 import com.capas.domain.Usuario;
 import com.capas.dto.FormDTO;
+import com.capas.repositories.EmpleadoRepositorio;
 import com.capas.repositories.UsuarioRepositorio;
 
 
@@ -23,6 +24,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 	
 	@Autowired(required=true)
 	UsuarioRepositorio ur;
+	
+	@Autowired(required=true)
+	EmpleadoRepositorio er;
 	
 	@Override
 	public List<Empleado> find(Integer user){
@@ -37,9 +41,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public List<Sucursal> findsucursalone(Integer id){
+	public Sucursal findsucursalone(Integer id){
 		// TODO Auto-generated method stub
-		return ud.findsucursalone(id);
+		return ur.findById(id).get();
 	}
 
 	@Transactional
@@ -48,11 +52,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		ur.delete(id);
 	}
 
-	@Override
-	public List<Sucursal> deletesucursal(Integer id){
-		// TODO Auto-generated method stub
-		return ud.deletesucursal(id);
-	}
+
 
 	@Override
 	public Sucursal findone(Integer user){
@@ -66,6 +66,18 @@ public class UsuarioServiceImpl implements UsuarioService {
 			return ud.deletempleado(id);
 
 		
+	}
+
+	@Transactional
+	public Sucursal savesucursal(Sucursal s) {
+		// TODO Auto-generated method stub
+		return ur.save(s);
+	}
+
+	@Transactional
+	public Empleado savempleado(Empleado s) {
+		// TODO Auto-generated method stub
+		return er.save(s);
 	}
 
 	

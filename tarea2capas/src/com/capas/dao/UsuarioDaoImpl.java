@@ -63,12 +63,6 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	}
 
 
-	@Override
-	public List<Sucursal> deletesucursal(Integer id) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 
 }

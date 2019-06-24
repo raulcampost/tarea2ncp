@@ -70,9 +70,9 @@
 
     <!-- Scripts -->
 
-    <script src="resources/bootstrap.min.js.descarga"></script>
-    <script src="resources/jquery-3.3.1.min.js.descarga"></script>
-    <script src="resources/popper.min.js.descarga"></script>
+    <script type="text/javascript" src="resources/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="resources/popper.min.js"></script>
 
 
 

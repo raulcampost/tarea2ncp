@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -18,26 +19,33 @@ import javax.persistence.Table;
 public class Sucursal {
 
 	@Id
-	@GeneratedValue(generator="sucursal_sec", strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "sucursal_sec", sequenceName = "public.sucursal_sec")
+	@GeneratedValue(generator="sucursal_id_sucursal_seq", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "sucursal_id_sucursal_seq", sequenceName = "public.sucursal_id_sucursal_seq")
 	@Column(name="id_sucursal")
 	private Integer idsucursal;
 	
+	
+	@NotNull(message = "Este campo es requerido!!!!")
 	@Column(name="nombre")
 	private String snombre;	
 	
+	@NotNull(message = "Este campo es requerido!!!!")
 	@Column(name="ubicacion")
 	private String subicacion;
 	
+	@NotNull(message = "Este campo es requerido!!!!")
 	@Column(name="hentrada")
 	private String sentrada;	
 	
+	@NotNull(message = "Este campo es requerido!!!!")
 	@Column(name="hsalida")
 	private String ssalida;	
 	
+	@NotNull(message = "Este campo es requerido!!!!")
 	@Column(name="mesas")
 	private Integer inmesas;	
 	
+	@NotNull(message = "Este campo es requerido!!!!")
 	@Column(name="gerente")
 	private String sgerente;	
 	
@@ -50,9 +58,8 @@ public class Sucursal {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Sucursal(Integer id,String nombre,String ubicacion,String entrada,String salida,Integer mesas,String gerente) {
+	public Sucursal(String nombre,String ubicacion,String entrada,String salida,Integer mesas,String gerente) {
 		// TODO Auto-generated constructor stub
-		this.idsucursal = id;
 		this.snombre = nombre;
 		this.subicacion = ubicacion;
 		this.sentrada = entrada;

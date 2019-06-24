@@ -40,19 +40,17 @@
 				<th>Accion</th>
 			</tr>
 			</thead>
-			<c:forEach var="c" items="${sucursal}">
 				<tr>
-					<td>${c.snombre}</td>
-					<td>${c.subicacion}</td>
-					<td>${c.sentrada}</td>
-					<td>${c.ssalida}</td>
-					<td>${c.inmesas}</td>
-					<td>${c.sgerente}</td>
+					<td>${sucursal.snombre}</td>
+					<td>${sucursal.subicacion}</td>
+					<td>${sucursal.sentrada}</td>
+					<td>${sucursal.ssalida}</td>
+					<td>${sucursal.inmesas}</td>
+					<td>${sucursal.sgerente}</td>
 					<td> 
-						<a class="btn btn-warning" onclick="location.href='${pageContext.request.contextPath}/editarcliente?ccliente=${c.idsucursal}'" value=""><i class="far fa-edit"></i></i></a>
+						<a class="btn btn-warning" href="#" value=""><i class="far fa-edit"></i></i></a>
 					</td>
 				</tr>
-			</c:forEach>
 		</table>
 	</div>
     </div>
@@ -62,7 +60,7 @@
       
     </div>
     <div class="col-sm-6 justify-content-end">
-      <a class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/index'" value="" /><i class="fas fa-plus"></i></a><br><br>
+      <a class="btn btn-success" href="${pageContext.request.contextPath}/nuevoempleado?id=${sucursal.idsucursal}" value="" ><i class="fas fa-plus"></i></a><br><br>
     </div>
   </div>
   <div class="row">
@@ -85,7 +83,7 @@
 					<td>${e.sgenero}</td>
 					<td>${e.bestado}</td>
 					<td> 
-						<a class="btn btn-warning" onclick="location.href='${pageContext.request.contextPath}/editarcliente?ccliente=${e.idempleado}'" value=""><i class="far fa-edit"></i></i></a>
+						<a class="btn btn-warning" href="#" value=""><i class="far fa-edit"></i></i></a>
 						<a class="btn btn-danger" name="id3" href="${pageContext.request.contextPath}/deletempleado?id3=${e.idempleado}&id=${e.idsucursal}" value=""><i class="far fa-trash-alt"></i></a>
 					</td>
 				</tr>
@@ -98,8 +96,8 @@
 	<div class="row">
 	    <div class="col-sm-12">
 	      <h3>P&aacute;gina ${pagina}, mostrando ${actual} de ${total}</h3>
-			<input type="button" class="myButton" onclick="location.href='${pageContext.request.contextPath}/vertodos?direccion=2'" value="Anterior" />
-			<input type="button" class="myButton" onclick="location.href='${pageContext.request.contextPath}/vertodos?direccion=1'" value="Siguiente" />
+			<input type="button" class="myButton"  href="#" value="Anterior" />
+			<input type="button" class="myButton"  href="#" value="Siguiente" />
 	    </div>
 	</div>
 	

@@ -32,10 +32,9 @@
   </div>
   <div class="row">
     <div class="col-sm-6 justify-content-start">
-      
     </div>
     <div class="col-sm-6 justify-content-end">
-      <a class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/index'" value="" /><i class="fas fa-plus"></i></a><br><br>
+      <a class="btn btn-success" href="${pageContext.request.contextPath}/nuevasucursal" value="" ><i class="fas fa-plus"></i></a><br><br>
     </div>
   </div>
   <div class="row">
@@ -63,7 +62,7 @@
 					<td>${c.sgerente}</td>
 					<td> 
 						<a class="btn btn-primary" name="id" href="${pageContext.request.contextPath}/sucursalxempleado?id=${c.idsucursal}" value=""><i class="far fa-eye"></i></i></a>
-						<a class="btn btn-warning" name="id2" href="${pageContext.request.contextPath}/sucursalxempleado?id=${c.idsucursal}" value=""><i class="far fa-edit"></i></i></a>
+						<a class="btn btn-warning" name="id2" href="#" value=""><i class="far fa-edit"></i></i></a>
 						<a class="btn btn-danger" name="id3" href="${pageContext.request.contextPath}/deletesucursal?id=${c.idsucursal}" value=""><i class="far fa-trash-alt"></i></a>
 					</td>
 				</tr>

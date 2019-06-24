@@ -14,6 +14,5 @@ public interface UsuarioDao {
 	public Integer deletempleado(Integer id) throws DataAccessException;
 	public List<Sucursal> findsucursal() throws DataAccessException;
 	public List<Sucursal> findsucursalone(Integer id) throws DataAccessException;
-	public List<Sucursal> deletesucursal(Integer id) throws DataAccessException;
 	
 }
